@@ -1,0 +1,32 @@
+.card {
+  border: var(--clr-bg);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.card:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.card .card-img-top {
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0;
+  border: none;
+}
+.card .card-body {
+  border-radius: 0;
+  border: none;
+}
+.card .card-body .card-title {
+  font-weight: bold;
+}
+.card .card-body .card-text {
+  margin: 0;
+}
+/*# sourceMappingURL=card.component.css.map */

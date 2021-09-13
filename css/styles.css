@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap");
-
 :root {
   --clr-elements-dark: hsl(209, 23%, 22%);
   --clr-bg-dark: hsl(207, 26%, 17%);
   --clr-input-dark: hsl(0, 0%, 100%);
   --clr-text-dark: hsl(0, 0%, 100%);
-
   --clr-elements-light: hsl(0, 0%, 100%);
   --clr-bg-light: hsl(0, 0%, 98%);
   --clr-input-light: hsl(0, 0%, 52%);
@@ -14,7 +12,8 @@
 
 * {
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -51,3 +50,4 @@ body {
 .text-input {
   color: var(--clr-input) !important;
 }
+/*# sourceMappingURL=styles.css.map */

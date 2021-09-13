@@ -1,0 +1,9 @@
+<a class="card bg-elements h-100" [routerLink]="['/country', country?.alpha2Code]">
+  <img [src]="country?.flag" class="card-img-top" alt="{{ country?.name }} flag">
+  <div class="card-body bg-elements py-4 px-4 pb-5">
+    <h5 class="card-title text-primary mb-3">{{ country?.name }}</h5>
+    <p class="card-text text-primary"><strong>Population: </strong>{{ country?.population | number }}</p>
+    <p class="card-text text-primary"><strong>Region: </strong>{{ country?.region }}</p>
+    <p class="card-text text-primary"><strong>Capital: </strong>{{ country?.capital }}</p>
+  </div>
+</a>

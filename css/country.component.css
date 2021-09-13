@@ -1,0 +1,27 @@
+.back i {
+  margin-right: 0.5rem;
+}
+
+.details {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  gap: 0.5rem 3rem;
+}
+@media screen and (max-width: 640px) {
+  .details {
+    grid-template-rows: unset;
+    grid-auto-flow: row;
+  }
+}
+.details > p {
+  margin: 0;
+}
+.details > p strong {
+  font-size: 1.1em;
+}
+.details > p span:not(:last-child)::after {
+  content: ", ";
+}
+/*# sourceMappingURL=country.component.css.map */

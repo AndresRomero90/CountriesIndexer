@@ -1,0 +1,27 @@
+.card {
+  border: var(--clr-bg);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .card-img-top {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 0;
+    border: none;
+  }
+  .card-body {
+    border-radius: 0;
+    border: none;
+    .card-title {
+      font-weight: bold;
+    }
+    .card-text {
+      margin: 0;
+    }
+  }
+}

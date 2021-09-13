@@ -1,0 +1,38 @@
+<div class="container-fluid px-5 py-5 d-flex flex-column flex-lg-row justify-content-between gap-3">
+  <form class="search-bar w-lg-25 d-flex flex-column" autocomplete="off" (ngSubmit)="search()">
+    <div class="input-group">
+      <span class="input-group-text text-primary bg-elements border-0 px-4 py-3" id="basic-addon"
+        aria-label="Magnifying Glass Icon"><i class="fas fa-search"></i></span>
+      <input [(ngModel)]="term" (input)="keyPressed()" name="search" type="text"
+        class="form-control bg-elements border-0 text-input px-4 py-3" placeholder="Search for a country..."
+        aria-label="Search for a country..." aria-describedby="basic-addon">
+    </div>
+    <ul *ngIf="suggestions?.edges?.length" class="suggestions bg-elements list-unstyled py-3 shadow-lg">
+      <li *ngFor="let edge of suggestions?.edges" class="px-4">
+        <a [routerLink]="['/country', edge.node?.alpha2Code]"
+          class="text-primary text-decoration-none">{{ edge.node?.name }}</a>
+      </li>
+    </ul>
+  </form>
+
+  <div class="dropdown d-flex flex-column align-items-stretch">
+    <button class="btn bg-elements text-primary dropdown-toggle px-4 py-3" type="button" id="dropdownMenuButton1"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      Filter by Region
+    </button>
+    <ul class="dropdown-menu bg-elements w-100 mt-1" aria-labelledby="dropdownMenuButton1">
+      <li *ngFor="let region of regions"><a class="dropdown-item text-primary"
+          (click)="filterByRegion(region)">{{ region }}</a></li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="loading" class="container-fluid px-5 py-3 d-flex justify-content-center">
+  <div class="spinner-grow text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="container-fluid px-5 py-3 grid">
+  <app-card *ngFor="let edge of countries.edges" [country]="edge.node"></app-card>
+</div>
